@@ -5,7 +5,7 @@ import (
 	"time"
 
 	"github.com/goincremental/dal"
-	nSessions "github.com/goincremental/negroni-sessions"
+	nSessions "gopkg.in/go-pot/sessions.v1"
 	"github.com/gorilla/securecookie"
 	gSessions "github.com/gorilla/sessions"
 )

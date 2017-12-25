@@ -2,8 +2,8 @@ package redisstore
 
 import (
 	"github.com/boj/redistore"
-	nSessions "github.com/goincremental/negroni-sessions"
 	gSessions "github.com/gorilla/sessions"
+	nSessions "gopkg.in/go-pot/sessions.v1"
 )
 
 //New returns a new Redis store
@@ -12,6 +12,16 @@ func New(size int, network, address, password string, keyPairs ...[]byte) (nSess
 	if err != nil {
 		return nil, err
 	}
+	return &rediStore{store}, nil
+}
+
+//New returns a new Redis store
+func NewWithDB(size int, network, address, password, db, keyPrefix string, keyPairs ...[]byte) (nSessions.Store, error) {
+	store, err := redistore.NewRediStoreWithDB(size, network, address, password, db, keyPairs...)
+	if err != nil {
+		return nil, err
+	}
+	store.SetKeyPrefix(keyPrefix)
 	return &rediStore{store}, nil
 }
 

@@ -7,9 +7,9 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/goincremental/negroni-sessions"
-	"github.com/goincremental/negroni-sessions/cookiestore"
-	"github.com/urfave/negroni"
+	"gopkg.in/go-pot/sessions.v1"
+	"gopkg.in/go-pot/sessions.v1/cookiestore"
+	"gopkg.in/pot.v1/negroni"
 )
 
 func Test_Sessions(t *testing.T) {

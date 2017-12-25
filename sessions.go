@@ -4,8 +4,8 @@
 //	package main
 //
 //	import (
-//		"github.com/urfave/negroni"
-//		"github.com/goincremental/negroni-sessions"
+//		"gopkg.in/pot.v1/negroni"
+//		"gopkg.in/go-pot/sessions.v1"
 //		"net/http"
 //	)
 //
@@ -30,7 +30,7 @@ import (
 
 	gContext "github.com/gorilla/context"
 	"github.com/gorilla/sessions"
-	"github.com/urfave/negroni"
+	"gopkg.in/pot.v1/negroni"
 )
 
 type contextKey int
