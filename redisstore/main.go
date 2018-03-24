@@ -37,4 +37,5 @@ func (c *rediStore) Options(options nSessions.Options) {
 		Secure:   options.Secure,
 		HttpOnly: options.HTTPOnly,
 	}
+	c.RediStore.SetSerializer(redistore.JSONSerializer{})
 }
