@@ -62,6 +62,8 @@ type Options struct {
 
 // Session stores the values and optional configuration for a session.
 type Session interface {
+	// returns the session ID
+	ID() string
 	// Get returns the session value associated to the given key.
 	Get(key interface{}) interface{}
 	// Set sets the session value associated to the given key.
@@ -122,6 +124,14 @@ func GetSession(req *http.Request) Session {
 		return s
 	}
 	return nil
+}
+
+func (s *session) ID() string {
+	sess := s.Session()
+	if sess == nil {
+		return ""
+	}
+	return sess.ID
 }
 
 func (s *session) Get(key interface{}) interface{} {
