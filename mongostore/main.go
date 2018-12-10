@@ -7,8 +7,8 @@ import (
 	nSessions "gopkg.in/go-pot/sessions.v1"
 	"github.com/gorilla/securecookie"
 	gSessions "github.com/gorilla/sessions"
-	"gopkg.in/mgo.v2"
-	"gopkg.in/mgo.v2/bson"
+	"github.com/globalsign/mgo"
+	"github.com/globalsign/mgo/bson"
 )
 
 // New returns a new mongo store
